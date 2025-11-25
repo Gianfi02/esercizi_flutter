@@ -59,15 +59,21 @@ class EsercizioLista extends StatelessWidget {
                       border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(3),
                     ),
+                    child: Container(
+                      margin: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black)
+                      ),
+                      child: Row(
+                        
+                        children: [
+                          Image.network(width: 60, height: 60, elemento.url),
 
-                    child: Row(
-                      children: [
-                        Image.network(width: 60, height: 60, elemento.url),
-
-                        Text(elemento.nome),
-                        Spacer(),
-                        Icon(Icons.arrow_right_sharp),
-                      ],
+                          Text(elemento.nome),
+                          Spacer(),
+                          Icon(Icons.arrow_right_sharp),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -88,17 +94,13 @@ class OggettoLista {
   OggettoLista({required this.nome, required this.url});
 }
 
-
-
 class InserimentoOggetti extends StatelessWidget {
   const InserimentoOggetti({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello mondo !'))),
+      home: Scaffold(body: Center(child: Text('Hello mondo !'))),
     );
   }
 }
